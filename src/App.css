@@ -1,38 +1,270 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a:visited {
+  text-decoration: none;
+  color: black;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*HOME*/
+.home {
+  width: 100%;
+  height: 100vh;
+}
+.fondo img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -10;
+}
+.logo-container-login img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.logo-login img {
+  width: 100%;
+}
+.logo-navbar img {
+  width: 400px;
+}
+.login {
+  width: 400px;
+  height: 250px;
+  position: absolute;
+  padding: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #000;
+  border-radius: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+}
+.Form {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
+}
+.form-group {
+  width: 80%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0.5rem 0;
+}
+.Form h2 {
+  font-weight: 400;
+  color: #000;
 }
 
-.App-link {
-  color: #61dafb;
+.Form button {
+  width: 30%;
+  height: 2rem;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 1rem;
+}
+.Form input {
+  width: 100%;
+  height: 2rem;
+  padding: 0 1rem;
+  border-radius: 1rem;
+  border: 1px solid #000;
+}
+::placeholder {
+  color: #000;
+  opacity: 1;
+}
+.navbar {
+  width: 100%;
+  height: 5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar div {
+  margin: 0 1rem;
+}
+.navbar-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-navbar {
+  position: absolute;
+  left: 20px;
+}
+.comercial-card {
+  width: 350px;
+  height: 450px;
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.foto {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  border: 1px solid black;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.datos {
+  width: 90%;
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.datos div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+}
+.panel {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  height: 80vh;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.mini-card {
+  width: 200px;
+  height: 200px;
+  border: 1px solid white;
+  background-color: rgba(179, 177, 174, 0.6);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+.mini-card-xs {
+  width: 50px;
+  height: 100px;
+  border: 1px solid white;
+  background-color: rgba(179, 177, 174, 0.6);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+.comparativa,
+.basededatos {
+  width: 90%;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.headerdatos {
+  width: 100%;
+  height: 4rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+}
+.cabeceras {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem;
+}
+.cabeceras div {
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  color: #000;
+  background: rgb(255, 255, 255);
+}
+.comparativa .left {
+  border-radius: 1rem;
+  width: 48%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.datoscomparativa {
+  width: 90%;
+  height: 90%;
+  border: 1px solid black;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1rem;
+}
+.containercomp {
+  width: 90%;
+  padding: 1rem;
+
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.potencias,
+.diasf {
+  width: 30px;
+}
+.logocomparativa {
+  border: 1px solid black;
+  width: 80%;
+  height: 5rem;
+}
+.logocomparativa img {
+  width: 100%;
+}
+.comparativa .right {
+  border-radius: 1rem;
+  width: 48%;
+  padding: 1rem;
 }

@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Home from './screens/Home';
+import Dashboard from './screens/Dashboard';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Comparacion from './screens/Comparacion';
+import Comercial from './screens/Comercial';
+import Contratos from './screens/Contratos';
+import BaseDatos from './screens/BaseDatos';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/*<Route path='/' element={<Home />} />*/}
+        <Route path='/' element={<Dashboard />} />
+        <Route path='/comparador' element={<Comparacion />} />
+        <Route path='/comercial' element={<Comercial />} />
+        <Route path='/contratos' element={<Contratos />} />
+        <Route path='/basededatos' element={<BaseDatos />} />
+        <Route path='/comisiones' element={<BaseDatos />} />
+      </Routes>
+    </Router>
   );
 }
 
