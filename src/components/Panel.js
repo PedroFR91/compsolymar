@@ -13,21 +13,21 @@ function Panel() {
   return (
     <div className='panel'>
       <Link to='/basededatos'>
-        <MiniCard img={BBDDImg} text='Actualizar BBDD' />
+        <MiniCard img={BBDDImg} text='MARCO RETRIBUTIVO' />
       </Link>
 
       <Link to='/comparador'>
-        <MiniCard img={ComparacionImg} text='Generar Comparativa' />
+        <MiniCard img={ComparacionImg} text='COMPARADOR' />
       </Link>
       <Link to='/comercial'>
-        <MiniCard img={ManImg} text='Alta Comercial' />
+        <MiniCard img={ManImg} text='COMERCIALES' />
       </Link>
       <Link to='/contratos'>
-        <MiniCard img={ContractImg} text='Ver Contratos' />
+        <MiniCard img={ContractImg} text='CONTRATOS' />
       </Link>
 
       <Link to='/comisiones'>
-        <MiniCard img={ComisionesImg} text='Comisiones' />
+        <MiniCard img={ComisionesImg} text='COMISIONES' />
       </Link>
     </div>
   );

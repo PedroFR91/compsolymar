@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <div className='navbar'>
       <div className='logo-navbar'>
-        <Link to='/dashboard'>
+        <Link to='/paneldecontrol'>
           <Logo />
         </Link>
       </div>

@@ -2999,6 +2999,5 @@ const general = [
     tarifa: '>4000',
     principal: '14000',
   },
-
 ];
 export default general;
