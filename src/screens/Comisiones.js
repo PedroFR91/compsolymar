@@ -7,8 +7,8 @@ import NavBar from '../components/NavBar';
 function Comisiones() {
   return (
     <div>
-      <Fondo />
       <NavBar />
+      <Fondo />
       <Datos />
       <ComComerciales />
     </div>

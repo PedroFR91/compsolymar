@@ -6,6 +6,7 @@ import Comparacion from './screens/Comparacion';
 import Comercial from './screens/Comercial';
 import Contratos from './screens/Contratos';
 import BaseDatos from './screens/BaseDatos';
+import Comisiones from './screens/Comisiones';
 function App() {
   return (
     <Router>
@@ -16,7 +17,7 @@ function App() {
         <Route path='/comercial' element={<Comercial />} />
         <Route path='/contratos' element={<Contratos />} />
         <Route path='/basededatos' element={<BaseDatos />} />
-        <Route path='/comisiones' element={<BaseDatos />} />
+        <Route path='/comisiones' element={<Comisiones />} />
       </Routes>
     </Router>
   );
