@@ -16,6 +16,7 @@ a:visited {
   height: 100vh;
 }
 .fondo img {
+  position: fixed;
   width: 100%;
   height: 100vh;
   object-fit: cover;
@@ -194,7 +195,7 @@ a:visited {
 }
 .comparativa {
   width: 90%;
-  height: 80%;
+  height: fit-content;
   background-color: rgba(255, 255, 255, 0.6);
   position: absolute;
   top: 100px;
@@ -204,7 +205,7 @@ a:visited {
   padding: 1rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   border: 1px solid black;
 }
 .basededatos {
@@ -345,4 +346,104 @@ a:visited {
   border-radius: 1rem;
   width: 48%;
   padding: 1rem;
+}
+.dina4 {
+  width: 210mm;
+  height: 297mm;
+  border: 1px solid black;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.cabecera {
+  width: 90%;
+  height: 20%;
+  border: 1px solid black;
+  position: relative;
+}
+
+.logocabecera img {
+  width: 60%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.logocomer {
+  width: 40%;
+  height: fit-content;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.logocomer img {
+  border: 1px solid black;
+  width: 60%;
+  margin: 0;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.detalles {
+  font-family: Tahoma, sans-serif;
+  font-size: 16px;
+  border: 1px solid black;
+  width: 70%;
+  height: 60%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.detalles .left,
+.detalles .right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.oferta {
+  width: 90%;
+  height: 20%;
+  border: 1px solid black;
+}
+.potencia {
+  width: 90%;
+  height: 20%;
+  border: 1px solid black;
+}
+.cabecerapotencias,
+.cabeceraenergias,
+.potencias,
+.energias {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.cabecerapotencias,
+.cabeceraenergias {
+  height: 50px;
+}
+.cabecerapotencias p,
+.cabeceraenergias p,
+.potencias p,
+.energias p {
+  border: 1px solid black;
+  width: 140px;
+  text-align: center;
+}
+.separador {
+  width: 100%;
+  height: 1px;
+  margin: 0.5rem 0;
+  border: 1px solid black;
+}
+.energia {
+  width: 90%;
+  height: 25%;
+  border: 1px solid black;
 }

@@ -14,9 +14,9 @@ function Datos() {
         </div>
 
         <div className='datamap'>
-          {general.map((row) => (
+          {general.map((row, index) => (
             <Row
-              key={row.tipologia}
+              key={index}
               tipologia={row.tipologia}
               concepto={row.concepto}
               tarifa={row.tarifa}

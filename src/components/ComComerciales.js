@@ -13,13 +13,8 @@ function ComComerciales() {
   return (
     <div className='comisiones'>
       <div>
-        <p>Elija Comercializadora</p>
-        <input
-          type='text'
-          name='comercializadora'
-          id='comercializadora'
-          placeholder=''
-        />
+        <p>Introduzca la Comisión General</p>
+        <input type='text' />
       </div>
       <div className='comisionescomerciales'>
         <div>Comisión general: {cg}</div>

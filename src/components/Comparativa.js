@@ -1,49 +1,143 @@
 import React from 'react';
-
+import Logo from './Logo';
+import LogoCom from './LogoCom';
 function Comparativa() {
   return (
     <div className='comparativa'>
-      <div className='left'>
-        <h1>Comparativa</h1>
-        <div className='datoscomparativa'></div>
-      </div>
-      <div className='right'>
-        <h1>Datos de la Factura</h1>
-        <div className='datoscomparativa'>
-          <div className='fecha containercomp'>
-            <label for='fecha'>Fecha</label>
-            <input type='text' name='fecha' id='fecha' />
+      <div className='dina4'>
+        <div className='cabecera'>
+          <div class='logocabecera'>
+            <Logo />
           </div>
-          <div className='nombrecliente containercomp'>
-            <label for='nombre'>Nombre Cliente</label>
-            <input type='text' name='nombre' id='nombre' />
+          <div class='logocomer'>
+            <LogoCom />
           </div>
-          <div className='tarifa containercomp'>
-            <label for='tarifa'>Tarifa</label>
-            <input type='text' name='tarifa' id='tarifa' />
+          <div class='detalles'>
+            <div className='left'>
+              <div>Fecha de oferta:</div>
+              <div>Tipo de Tarifa:</div>
+              <div>Nombre de Tarifa:</div>
+            </div>
+            <div className='right'>
+              <div>Potencia Contratada:</div>
+              <div>Días de Factura:</div>
+              <div>Consumo:</div>
+            </div>
           </div>
-          <div className='potencia containercomp'>
-            <label for='P1'>P1</label>
-            <input type='text' name='p1' id='p1' className='potencias' />
-            <label for='P2'>P2</label>
-            <input type='text' name='p2' id='p2' className='potencias' />
-            <label for='P3'>P3</label>
-            <input type='text' name='p3' id='p3' className='potencias' />
+          <div className='cliente'>Cliente:</div>
+        </div>
+
+        <div className='potencia'>
+          <div className='cabecerapotencias'>
+            <p>Término de Potencia</p>
+            <p>Potencia</p>
+            <p>Días</p>
+            <p>Precio</p>
+            <p>Total</p>
           </div>
-          <div className='dias containercomp'>
-            <label for='dias'>Días facturados</label>
-            <input type='text' name='dias' id='dias' className='diasf' />
+          <div className='potencias'>
+            <p>P1</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
           </div>
-          <div className='consumo containercomp'>
-            <label for='consumo'>Consumo</label>
-            <input
-              type='text'
-              name='consumo'
-              id='consumo'
-              className='consumos'
-            />
+          <div className='potencias'>
+            <p>P2</p>
+            <p>0 </p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+          </div>
+          <div className='potencias'>
+            <p>P3</p>
+            <p>0 </p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+          </div>
+          <div className='potencias'>
+            <p>P4</p>
+            <p>0 </p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+          </div>
+          <div className='potencias'>
+            <p>P5</p>
+            <p>0 </p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+          </div>
+          <div className='potencias'>
+            <p>P6</p>
+            <p>0 </p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
           </div>
         </div>
+        <div className='energia'>
+          <div className='cabeceraenergias'>
+            <p>Consumo:</p>
+            <p>Potencia</p>
+            <p>Días</p>
+            <p>Precio</p>
+            <p>Total</p>
+          </div>
+          <div className='energias'>
+            <p>P1</p>
+            <p>0 </p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+          </div>
+          <div className='energias'>
+            <p>P2</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+          </div>
+          <div className='energias'>
+            <p>P3</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+          </div>
+          <div className='separador'></div>
+          <div className='energias'>
+            <p>Otros Gastos</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+          </div>
+          <div className='energias'>
+            <p>Impuesto Eléctrico</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+          </div>
+          <div className='energias'>
+            <p>Alquiler Equipos</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+          </div>
+          <div className='energias'>
+            <p>IVA (10%)</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+            <p>0</p>
+          </div>
+        </div>
+        <div className='oferta'></div>
       </div>
     </div>
   );
