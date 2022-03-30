@@ -61,7 +61,7 @@ function Comparativa() {
           </div>
           <div className='potencias'>
             <p>P1</p>
-            <p>{df}</p>
+            <p>0</p>
             <p>0</p>
             <p>0</p>
             <p>0</p>
