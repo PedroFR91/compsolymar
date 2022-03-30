@@ -1,30 +1,54 @@
 import React from 'react';
 import Logo from './Logo';
 import LogoCom from './LogoCom';
+import logo from '../assets/endesa.png';
+
 function Comparativa() {
+  const getInput = (e) => {};
   return (
     <div className='comparativa'>
       <div className='dina4'>
         <div className='cabecera'>
-          <div class='logocabecera'>
+          <div className='logocabecera'>
             <Logo />
           </div>
           <div class='logocomer'>
-            <LogoCom />
+            <img src={logo} alt='' />
           </div>
           <div class='detalles'>
             <div className='left'>
-              <div>Fecha de oferta:</div>
-              <div>Tipo de Tarifa:</div>
-              <div>Nombre de Tarifa:</div>
+              <div>
+                Fecha de oferta: <input type='date' name='' id='' />
+              </div>
+              <div>
+                Tipo de Tarifa:{' '}
+                <select name='tarifa' id=''>
+                  <option value='2.0'>2.0</option>
+                  <option value='3.0'>3.0</option>
+                </select>
+              </div>
+              <div>
+                Nombre de Tarifa:
+                <input type='text' name='nt' id='' />
+              </div>
+              <div className='cliente'>
+                Cliente: <input type='text' name='cliente' id='cliente' />
+              </div>
             </div>
             <div className='right'>
-              <div>Potencia Contratada:</div>
-              <div>Días de Factura:</div>
-              <div>Consumo:</div>
+              <div>
+                Potencia Contratada: <input type='text' name='pt' id='' />
+              </div>
+              <div>
+                Días de Factura:
+                <input type='number' name='df' id='df' onChange={getInput} />
+              </div>
+              <div>
+                Consumo:
+                <input type='text' name='consumo' id='' />
+              </div>
             </div>
           </div>
-          <div className='cliente'>Cliente:</div>
         </div>
 
         <div className='potencia'>
@@ -37,7 +61,7 @@ function Comparativa() {
           </div>
           <div className='potencias'>
             <p>P1</p>
-            <p>0</p>
+            <p>{df}</p>
             <p>0</p>
             <p>0</p>
             <p>0</p>
@@ -110,6 +134,7 @@ function Comparativa() {
           <div className='separador'></div>
           <div className='energias'>
             <p>Otros Gastos</p>
+
             <p>0</p>
             <p>0</p>
             <p>0</p>
@@ -137,7 +162,12 @@ function Comparativa() {
             <p>0</p>
           </div>
         </div>
-        <div className='oferta'></div>
+        <div className='oferta'>
+          <div>Actualmente paga: </div>
+          <div>Nueva oferta:</div>
+          <div>Ahorro mensual:</div>
+          <div>Ahorro anual:</div>
+        </div>
       </div>
     </div>
   );
