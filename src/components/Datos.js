@@ -7,8 +7,8 @@ function Datos() {
     <>
       <div className='basededatos'>
         <div className='cabeceradatos'>
-          <p>Tipología</p>
-          <p>Concepto</p>
+          <p>Comercializadora:</p>
+          <p>Nombre de Tarifa:</p>
           <p>Tarifa</p>
           <p>Comisión Principal</p>
         </div>
