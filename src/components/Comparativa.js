@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import Logo from './Logo';
 import logo from '../assets/iberdrola.png';
 import jsPDF from 'jspdf';
+import pdfImg from '../assets/pdf.svg.png';
 function Comparativa() {
   const [cliente, setCliente] = useState('');
   const [tarifa, setTarifa] = useState('');
@@ -11,14 +12,15 @@ function Comparativa() {
   const [potencia1, setPotencia1] = useState('');
   const [potencia2, setPotencia2] = useState('');
   const [potencia3, setPotencia3] = useState('');
-  const [potencia4, setPotencia4] = useState('');
-  const [potencia5, setPotencia5] = useState('');
-  const [potencia6, setPotencia6] = useState('');
+
   const [terpot, setTerpot] = useState('');
   const [con, setCon] = useState('');
   const [potcon1, setPotcon1] = useState('');
   const [potcon2, setPotcon2] = useState('');
   const [potcon3, setPotcon3] = useState('');
+  const [potcon4, setPotcon4] = useState('');
+  const [potcon5, setPotcon5] = useState('');
+  const [potcon6, setPotcon6] = useState('');
   const [actual, setActual] = useState('');
   const alq = 1;
   const pdfRef = useRef(null);
@@ -72,7 +74,7 @@ function Comparativa() {
             />
           </div>
           <div className='potenciacon'>
-            <label>Potencia Contratada: </label>
+            <label>Potencia Consumida: </label>
             <div>
               <label>P1:</label>
               <input
@@ -92,12 +94,39 @@ function Comparativa() {
               />
             </div>
             <div>
-              <label>P2:</label>
+              <label>P3:</label>
               <input
                 type='text'
                 name='pt'
                 id=''
                 onChange={(e) => setPotcon3(e.target.value)}
+              />
+            </div>
+            <div>
+              <label>P4:</label>
+              <input
+                type='text'
+                name='pt'
+                id=''
+                onChange={(e) => setPotcon4(e.target.value)}
+              />
+            </div>
+            <div>
+              <label>P5:</label>
+              <input
+                type='text'
+                name='pt'
+                id=''
+                onChange={(e) => setPotcon5(e.target.value)}
+              />
+            </div>
+            <div>
+              <label>P6:</label>
+              <input
+                type='text'
+                name='pt'
+                id=''
+                onChange={(e) => setPotcon6(e.target.value)}
               />
             </div>
           </div>
@@ -135,33 +164,6 @@ function Comparativa() {
                   onChange={(e) => setPotencia3(e.target.value)}
                 />
               </div>
-              <div>
-                <label>P4:</label>
-                <input
-                  type='text'
-                  name='consumo'
-                  id=''
-                  onChange={(e) => setPotencia4(e.target.value)}
-                />
-              </div>
-              <div>
-                <label>P5:</label>
-                <input
-                  type='text'
-                  name='consumo'
-                  id=''
-                  onChange={(e) => setPotencia5(e.target.value)}
-                />
-              </div>
-              <div>
-                <label>P6:</label>
-                <input
-                  type='text'
-                  name='consumo'
-                  id=''
-                  onChange={(e) => setPotencia6(e.target.value)}
-                />
-              </div>
             </div>
           </div>
           <div>
@@ -186,13 +188,18 @@ function Comparativa() {
             <label>Paga actualmente::</label>
             <input type='text' onChange={(e) => setActual(e.target.value)} />
           </div>
+
+          <div className='pdfimg'>
+            <img src={pdfImg} alt='' width={'100px'} />
+            <button onClick={handleDownload}>Descargar</button>
+          </div>
         </form>
         <div className='dina4' ref={pdfRef}>
           <div className='cabecera'>
             <div className='logocabecera'>
               <Logo />
             </div>
-            <div class='logocomer'>
+            <div className='logocomer'>
               <img src={logo} alt='' />
             </div>
             <div class='detalles'>
@@ -209,179 +216,123 @@ function Comparativa() {
               </div>
             </div>
           </div>
-
-          <div className='potencia'>
-            <div className='cabecerapotencias'>
-              <p>Término de Potencia</p>
-              <p>Potencia</p>
-              <p>Días</p>
-              <p>Precio</p>
-              <p>Total</p>
-            </div>
-            <div className='potencias'>
-              <p>P1</p>
-              <p>{potencia1}</p>
-              <p>{dias}</p>
-              <p>{terpot}</p>
-              <p>{potencia1 * dias * terpot}</p>
-            </div>
-            <div className='potencias'>
-              <p>P2</p>
-              <p>{potencia2} </p>
-              <p>{dias}</p>
-              <p>{terpot}</p>
-              <p>{potencia2 * dias * terpot}</p>
-            </div>
-            <div className='potencias'>
-              <p>P3</p>
-              <p>{potencia3} </p>
-              <p>{dias}</p>
-              <p>{terpot}</p>
-              <p>{potencia3 * dias * terpot}</p>
-            </div>
-            <div className='potencias'>
-              <p>P4</p>
-              <p>{potencia4} </p>
-              <p>{dias}</p>
-              <p>{terpot}</p>
-              <p>{potencia4 * dias * terpot}</p>
-            </div>
-            <div className='potencias'>
-              <p>P5</p>
-              <p>{potencia5} </p>
-              <p>{dias}</p>
-              <p>{terpot}</p>
-              <p>{potencia5 * dias * terpot}</p>
-            </div>
-            <div className='potencias'>
-              <p>P6</p>
-              <p>{potencia6} </p>
-              <p>{dias}</p>
-              <p>{terpot}</p>
-              <p>{potencia6 * dias * terpot}</p>
-            </div>
-            <div className='potencias'>
-              <p></p>
-              <p> </p>
-              <p></p>
-              <p>TOTAL</p>
-              <p>
-                {potencia1 * dias * terpot +
-                  potencia2 * dias * terpot +
-                  potencia3 * dias * terpot +
-                  potencia4 * dias * terpot +
-                  potencia5 * dias * terpot +
-                  potencia6 * dias * terpot}
-              </p>
-            </div>
-          </div>
-          <div className='energia'>
-            <div className='cabeceraenergias'>
-              <p>Consumo:</p>
-              <p>Potencia</p>
-              <p>Días</p>
-              <p>Precio</p>
-              <p>Total</p>
-            </div>
-            <div className='energias'>
-              <p>P1</p>
-              <p>{potcon1} </p>
-              <p>{dias}</p>
-              <p>{con}</p>
-              <p>{potcon1 * dias * con}</p>
-            </div>
-            <div className='energias'>
-              <p>P2</p>
-              <p>{potcon2}</p>
-              <p>{dias}</p>
-              <p>{con}</p>
-              <p>{potcon2 * dias * con}</p>
-            </div>
-            <div className='energias'>
-              <p>P3</p>
-              <p>{potcon3}</p>
-              <p>{dias}</p>
-              <p>{con}</p>
-              <p>{potcon3 * dias * con}</p>
-            </div>
-            <div className='energias'>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p>TOTAL</p>
-              <p>
-                {potcon1 * dias * con +
-                  potcon2 * dias * con +
-                  potcon3 * dias * con}
-              </p>
-            </div>
-            <div className='separador'></div>
-            <div className='energias'>
-              <p>Otros Gastos</p>
-
-              <p></p>
-              <p></p>
-              <p></p>
-              <p>0</p>
-            </div>
-            <div className='energias'>
-              <p>Impuesto Eléctrico</p>
-              <p></p>
-              <p>
-                0,005 X{' '}
-                {' ' +
-                  (potcon1 * dias * con +
-                    potcon2 * dias * con +
-                    potcon3 * dias * con)}{' '}
-              </p>
-              <p></p>
-              <p>
+          <table className='table-potencias'>
+            <tr>
+              <th>Término de Potencia</th>
+              <th>Potencia (KW)</th>
+              <th>Días</th>
+              <th>Precio (€/KWh)</th>
+              <th>Total</th>
+            </tr>
+            <tr>
+              <td>P1</td>
+              <td>{potencia1}</td>
+              <td>{dias}</td>
+              <td>{terpot}</td>
+              <td>{potencia1 * dias * terpot}</td>
+            </tr>
+            <tr>
+              <td>P2</td>
+              <td>{potencia2}</td>
+              <td>{dias}</td>
+              <td>{terpot}</td>
+              <td>{potencia2 * dias * terpot}</td>
+            </tr>
+            <tr>
+              <td>P3</td>
+              <td>{potencia3}</td>
+              <td>{dias}</td>
+              <td>{terpot}</td>
+              <td>{potencia3 * dias * terpot}</td>
+            </tr>
+            <tr>
+              <td>TOTAL</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
                 {' '}
-                {0.005 *
-                  (potcon1 * dias * con +
-                    potcon2 * dias * con +
-                    potcon3 * dias * con)}
-              </p>
-            </div>
-            <div className='energias'>
-              <p>Alquiler Equipos</p>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p>{alq}</p>
-            </div>
-            <div className='energias'>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p>TOTAL SIN IVA</p>
-              <p>
-                {alq +
-                  0.005 *
-                    (potcon1 * dias * con +
-                      potcon2 * dias * con +
-                      potcon3 * dias * con)}
-              </p>
-            </div>
-            <div className='energias'>
-              <p>IVA (10%)</p>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p>
-                {0.1 *
-                  (alq +
-                    0.005 *
-                      (potcon1 * dias * con +
-                        potcon2 * dias * con +
-                        potcon3 * dias * con))}
-              </p>
-            </div>
-          </div>
+                {(
+                  potencia1 * dias * terpot +
+                  potencia2 * dias * terpot +
+                  potencia3 * dias * terpot
+                ).toFixed(2)}
+              </td>
+            </tr>
+          </table>
+          <table className='table-energias'>
+            <tr>
+              <th>Consumo</th>
+              <th>Potencias (KW)</th>
+              <th>Días</th>
+              <th>Precio (€/KWh)</th>
+              <th>Total</th>
+            </tr>
+            <tr>
+              <td>P1</td>
+              <td>{potcon1}</td>
+              <td>{dias}</td>
+              <td>{con}</td>
+              <td>{(potcon1 * dias * con).toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>P2</td>
+              <td>{potcon2}</td>
+              <td>{dias}</td>
+              <td>{con}</td>
+              <td>{(potcon2 * dias * con).toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>P3</td>
+              <td>{potcon3}</td>
+              <td>{dias}</td>
+              <td>{con}</td>
+              <td>{(potcon3 * dias * con).toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>P4</td>
+              <td>{potcon4}</td>
+              <td>{dias}</td>
+              <td>{con}</td>
+              <td>{(potcon4 * dias * con).toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>P5</td>
+              <td>{potcon5}</td>
+              <td>{dias}</td>
+              <td>{con}</td>
+              <td>{(potcon5 * dias * con).toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>P6</td>
+              <td>{potcon6}</td>
+              <td>{dias}</td>
+              <td>{con}</td>
+              <td>{(potcon6 * dias * con).toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>TOTAL</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                {(
+                  potcon1 * dias * con +
+                  potcon2 * dias * con +
+                  potcon3 * dias * con +
+                  potcon4 * dias * con +
+                  potcon5 * dias * con +
+                  potcon6 * dias * con
+                ).toFixed(2)}
+              </td>
+            </tr>
+          </table>
+
           <div className='oferta'>
             <div>
               Nueva Oferta:{' '}
-              {potcon1 * dias * con +
+              {(
+                potcon1 * dias * con +
                 potcon2 * dias * con +
                 potcon3 * dias * con +
                 0.1 *
@@ -389,12 +340,14 @@ function Comparativa() {
                     0.005 *
                       (potcon1 * dias * con +
                         potcon2 * dias * con +
-                        potcon3 * dias * con))}{' '}
+                        potcon3 * dias * con))
+              ).toFixed(2) + '€'}{' '}
             </div>
-            <div>Paga actualmente:{actual}</div>
+            <div>Paga actualmente:{actual + '€'}</div>
             <div>
               Ahorro:{' '}
-              {potcon1 * dias * con +
+              {(
+                potcon1 * dias * con +
                 potcon2 * dias * con +
                 potcon3 * dias * con +
                 0.1 *
@@ -403,25 +356,27 @@ function Comparativa() {
                       (potcon1 * dias * con +
                         potcon2 * dias * con +
                         potcon3 * dias * con)) -
-                actual}
+                actual
+              ).toFixed(2) + '€'}
             </div>
-            <div>
+            <div id='anual'>
               Ahorro anual:
-              {(potcon1 * dias * con +
-                potcon2 * dias * con +
-                potcon3 * dias * con +
-                0.1 *
-                  (alq +
-                    0.005 *
-                      (potcon1 * dias * con +
-                        potcon2 * dias * con +
-                        potcon3 * dias * con)) -
-                actual) *
-                12}
+              {(
+                (potcon1 * dias * con +
+                  potcon2 * dias * con +
+                  potcon3 * dias * con +
+                  0.1 *
+                    (alq +
+                      0.005 *
+                        (potcon1 * dias * con +
+                          potcon2 * dias * con +
+                          potcon3 * dias * con)) -
+                  actual) *
+                12
+              ).toFixed(2) + '€'}
             </div>
           </div>
         </div>
-        <button onClick={handleDownload}>Descargar</button>
       </div>
     </>
   );

@@ -8,7 +8,7 @@ import ManImg from '../assets/man.png';
 import ContractImg from '../assets/contract.png';
 import ComisionesImg from '../assets/comisiones.png';
 import ComparacionImg from '../assets/comparacion.png';
-
+import ComercializadorasImg from '../assets/comers.png';
 function Panel() {
   return (
     <div className='panel'>
@@ -25,9 +25,11 @@ function Panel() {
       <Link to='/contratos'>
         <MiniCard img={ContractImg} text='CONTRATOS' />
       </Link>
-
       <Link to='/comisiones'>
         <MiniCard img={ComisionesImg} text='COMISIONES' />
+      </Link>
+      <Link to='/comercializadoras'>
+        <MiniCard img={ComercializadorasImg} text='COMERCIALIZADORAS' />
       </Link>
     </div>
   );

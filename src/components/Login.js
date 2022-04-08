@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
-
+import { Link } from 'react-router-dom';
 function Login() {
   return (
     <div className='login'>
@@ -24,9 +24,9 @@ function Login() {
             placeholder='Contraseña'
           />
         </div>
-        <button type='submit' className='btn btn-primary'>
+        <Link to='/paneldecontrol' className='btn btn-primary'>
           Acceder
-        </button>
+        </Link>
       </form>
     </div>
   );
